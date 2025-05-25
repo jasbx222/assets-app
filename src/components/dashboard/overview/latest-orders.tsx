@@ -15,17 +15,17 @@ import TableRow from '@mui/material/TableRow';
 import { ArrowRight as ArrowRightIcon } from '@phosphor-icons/react/dist/ssr/ArrowRight';
 import dayjs from 'dayjs';
 
-const statusMap :any= {
-  pending: { label: 'EXP', color: 'warning' },
-  delivered: { label: 'NEW', color: 'success' },
-  refunded: { label: 'Unknown', color: 'error' },
-} ;
+const statusMap = {
+  pending: { label: 'Pending', color: 'warning' },
+  delivered: { label: 'Delivered', color: 'success' },
+  refunded: { label: 'Refunded', color: 'error' },
+} as const;
 
 export interface Order {
   id: string;
   customer: { name: string };
   amount: number;
-  status: 'NEW ' | 'EXP' | 'Unknown';
+  status: 'pending' | 'delivered' | 'refunded';
   createdAt: Date;
 }
 
